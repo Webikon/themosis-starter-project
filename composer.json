@@ -1,0 +1,70 @@
+{
+  "name": "themosis/themosis",
+  "description": "The Themosis framework. A WordPress framework.",
+  "keywords": ["themosis", "framework", "wordpress"],
+  "license": "GPL-2.0-or-later",
+  "support": {
+    "issues": "https://github.com/themosis/framework/issues",
+    "source": "https://github.com/themosis/framework"
+  },
+  "authors": [
+    {
+      "name": "Julien Lambé",
+      "email": "julien@themosis.com",
+      "homepage": "https://www.themosis.com/"
+    }
+  ],
+  "type": "project",
+  "repositories":[
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "johnpbloch/wordpress-core": "^5.1.0",
+    "johnpbloch/wordpress-core-installer": "^1.0",
+    "themosis/framework": "^2.0.0"
+  },
+  "require-dev": {
+    "laravel/homestead": "^7.0",
+    "phpunit/phpunit": "^7.0",
+    "symfony/var-dumper": "^4.2"
+  },
+  "extra":{
+    "installer-paths": {
+      "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "htdocs/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": {
+      "johnpbloch/wordpress-core": "htdocs/cms"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "Themosis\\Core\\ComposerScripts::postAutoloadDump",
+      "@php console package:discover --ansi"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php console vendor:publish --tag=themosis --force",
+      "@php console key:generate --ansi"
+    ]
+  }
+}
