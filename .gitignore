@@ -4,6 +4,8 @@ Thumbs.db
 
 ### Vagrant
 /.vagrant
+/.ddev/
+.lando.local.yml
 
 ### Composer
 /vendor/
@@ -22,6 +24,8 @@ node_modules/
 /htdocs/cms/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
+/htdocs/wp-config-ddev.php
+/htdocs/.htaccess
 
 ### Environment Credentials
 .env
