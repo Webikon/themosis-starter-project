@@ -1,0 +1,87 @@
+.btn {
+    @include transition(background-color, border-color, color);
+    display: inline-block;
+    vertical-align: middle;
+    padding: rem-calc(15) rem-calc(60) rem-calc(15) rem-calc(60);
+    border: 2px solid transparent;
+    color: $body-color;
+    background-color: transparent;
+    line-height: 1;
+    text-align: center;
+    user-select: none;
+
+    &:hover {
+        color: $body-color;
+        text-decoration: none;
+    }
+
+    &:focus,
+    &.focus {
+        outline: 0;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    // Opinionated: add "hand" cursor to non-disabled .btn elements
+    &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none;
+}
+
+// Full background variation
+.btn--primary {
+    color: $white;
+    background-color: $primary;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: $green-dark;
+    }
+}
+
+.btn--outlined {
+    border-color: $primary;
+
+    &:hover,
+    &:focus {
+        border-color: $primary;
+        color: $white;
+        background-color: $primary;
+    }
+}
+
+.btn--outlined-gray {
+    border-color: $gray-500;
+    color: $gray-500;
+
+    &:hover,
+    &:focus {
+        border-color: $primary;
+        color: $white;
+        background-color: $primary;
+    }
+}
+
+// White variation
+.btn--white {
+    border-color: $white;
+    color: $secondary;
+
+    &:hover,
+    &:focus {
+        border-color: $white;
+        color: $primary;
+        background-color: $white;
+    }
+}

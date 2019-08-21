@@ -1,0 +1,39 @@
+{
+  "name": "themosis-theme",
+  "version": "2.0.0",
+  "description": "Themosis framework boilerplate theme.",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "Themosis",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/themosis/theme/issues"
+  },
+  "homepage": "https://github.com/themosis/theme#readme",
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "browser-sync-webpack-plugin": "2.2.2",
+    "copy-webpack-plugin": "5.0.4",
+    "cross-env": "5.2.0",
+    "imagemin-svgo": "7.0.0",
+    "imagemin-webpack": "5.1.0",
+    "laravel-mix": "4.1.2",
+    "laravel-mix-purgecss": "4.1.0",
+    "purgecss-whitelister": "2.4.0",
+    "resolve-url-loader": "3.1.0",
+    "sass": "1.22.10",
+    "sass-loader": "7.3.1",
+    "vue-template-compiler": "2.6.10"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "choices.js": "7.0.0",
+    "jquery": "3.4.1",
+    "popper.js": "1.15.0",
+    "slick-carousel": "1.8.1"
+  }
+}

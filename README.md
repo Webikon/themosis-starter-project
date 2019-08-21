@@ -7,10 +7,11 @@ Steps below are only quick guide how to start working with project, for addition
 
 This starter project includes:
 - Themosis core
-- TODO: Predefined set of plugins
-- TODO: BladeSVG
-- TODO: Theme with predefined files structure, Bootstrap, Laravel Mix, etc.
-- TODO: Linters config files
+- Predefined set of plugins
+- BladeSVG
+- Theme with predefined files structure, Bootstrap, Laravel Mix, etc.
+- Linters config files - PHPCS, ESLint, SASS-Lint, editor-config
+- GrumPHP
 - TODO: Basic Controllers examples
 - TODO: Basic routing examples
 - TODO: Basic Models examples

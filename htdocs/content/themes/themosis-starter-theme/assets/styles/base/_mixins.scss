@@ -1,0 +1,136 @@
+// Center block
+@mixin center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Mixin for stretching absolute position element to parent's size
+@mixin absolute-stretch() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// Stretch image to whole area and vertical center it using absolute position and transform
+@mixin image-cover-simulation() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+// Absolute vertical center
+@mixin vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// Absolute horizontal center
+@mixin horizontal-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Absolute horizontal and vertical center
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Reset list style
+@mixin reset-list() {
+    margin: 0;
+    list-style-type: none;
+}
+
+// Uppercase, slightly letterspaced text. Could use for headings.
+// Mainly a timesaver.
+@mixin upperspace() {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+// Add proper placeholder vendor prefixes
+/* Usage:
+@include placeholder {
+  font-size: rem-calc(14);
+  font-weight: bold;
+}
+*/
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+// Source: https://gist.github.com/tobiasahlin/7a421fb9306a4f518aab
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+//
+// Pass in any number of transitions
+@mixin transition($transitions...) {
+    $unfolded-transitions: ();
+
+    @each $transition in $transitions {
+        $unfolded-transitions: append($unfolded-transitions, unfold-transition($transition), comma);
+    }
+
+    transition: $unfolded-transitions;
+}
+
+@function unfold-transition($transition) {
+    // Default values
+    $property: all;
+    $duration: 0.25s;
+    $easing: null; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $default-properties: ($property,
+        $duration,
+        $easing,
+        $delay);
+
+    // Grab transition properties if they exist
+    $unfolded-transition: ();
+
+    @for $i from 1 through length($default-properties) {
+        $p: null;
+
+        @if $i <=length($transition) {
+            $p: nth($transition, $i);
+        }
+
+        @else {
+            $p: nth($default-properties, $i);
+        }
+
+        $unfolded-transition: append($unfolded-transition, $p);
+    }
+
+    @return $unfolded-transition;
+}

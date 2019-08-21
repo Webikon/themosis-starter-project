@@ -1,0 +1,123 @@
+// ---
+// Theme variables
+//
+// See BS documentation: https://getbootstrap.com/docs/4.1/getting-started/theming/
+// or see https://github.com/twbs/bootstrap/blob/v4.2.1/scss/_variables.scss
+// ---
+
+// Colors
+$green: #80ba27;
+$green-dark: #639413;
+$red: #ca3d2a;
+$white:    #fff;
+$gray-100: #f4f4f7;
+$gray-200: #e9ecef;
+$gray-400: #ced4da;
+$gray-500: #898989;
+$gray-900: #333;
+
+// $colors: (
+//     "green": $green,
+//     "dark-green": $green-dark,
+//     "red":       $red,
+//     "gray":       $gray-500,
+//     "gray-dark":  $gray-900,
+//     "gray-light":  $gray-100,
+// );
+
+$primary: $green;
+$secondary: $gray-900;
+
+
+// Custom spacers
+// Default spacers are removed and we are add new classes,
+// from which we can better see spacer value
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    5: ($spacer * .25),
+    10: ($spacer * .5),
+    20: $spacer,
+    30: ($spacer * 1.5),
+    40: ($spacer * 2),
+    60: ($spacer * 3)
+);
+
+
+// Grid
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px,
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1440px,
+);
+
+// Components
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+
+// Fonts
+$font-family-base: 'Muli';
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 2.25;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.375;
+
+$headings-font-weight: 400;
+
+// Forms
+$input-btn-focus-box-shadow: none;
+
+$label-margin-bottom: 0.5rem;
+
+// $input-padding-y: $input-btn-padding-y;
+$input-padding-x: 0.75rem;
+$input-font-size: 1rem;
+// $input-font-weight: $font-weight-base;
+// $input-line-height: $input-btn-line-height;
+
+// $input-padding-y-sm: $input-btn-padding-y-sm;
+// $input-padding-x-sm: $input-btn-padding-x-sm;
+// $input-font-size-sm: $input-btn-font-size-sm;
+// $input-line-height-sm: $input-btn-line-height-sm;
+
+// $input-padding-y-lg: $input-btn-padding-y-lg;
+// $input-padding-x-lg: $input-btn-padding-x-lg;
+// $input-font-size-lg: $input-btn-font-size-lg;
+// $input-line-height-lg: $input-btn-line-height-lg;
+
+$input-bg: $white;
+// $input-disabled-bg: $gray-200;
+
+$input-color: $gray-900;
+$input-border-color: $gray-500;
+$input-border-width: 2px;
+$input-box-shadow: none;
+
+$input-focus-border-color: $green-dark;
+$input-focus-box-shadow: none;
+
+$input-placeholder-color: $gray-400;
+
+$custom-control-indicator-border-width: 1px;
+
+$custom-select-box-shadow: none;
+$custom-select-focus-box-shadow: none;

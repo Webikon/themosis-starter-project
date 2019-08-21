@@ -1,0 +1,28 @@
+/*
+	Styles for headings, text, etc.
+*/
+
+a {
+    transition: color 250ms, background-color 250ms, opacity 250ms, border 250ms;
+}
+
+blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    border-left: none;
+    background: $white;
+    quotes: "\201C""\201D""\2018""\2019";
+
+    p {
+        display: inline;
+    }
+
+    &:before {
+        vertical-align: -0.4em;
+        margin-right: 0.25em;
+        content: open-quote;
+        color: $gray-800;
+        font-size: 4em;
+        line-height: 0.1em;
+    }
+}

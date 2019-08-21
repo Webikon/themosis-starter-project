@@ -1,0 +1,19 @@
+.svg-icon {
+    @include transition(fill);
+    fill: inherit;
+}
+
+// Loader icon
+.icon-loader {
+    position: relative;
+    display: none;
+    width: 10px;
+    height: 10px;
+    margin: rem-calc(50) auto;
+    border-radius: 50%;
+    color: $secondary;
+    font-size: rem-calc(5);
+    text-indent: -9999em;
+    animation: icon-spin 1.3s infinite linear;
+    transform: translateZ(0);
+}

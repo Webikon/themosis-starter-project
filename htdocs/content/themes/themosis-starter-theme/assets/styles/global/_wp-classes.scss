@@ -1,0 +1,119 @@
+// Accessibility: Text meant only for screen readers.
+.screen-reader-text {
+    @include sr-only;
+    @include sr-only-focusable;
+}
+
+
+// Media alignment
+.alignnone {
+    max-width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.aligncenter {
+    display: block;
+    height: auto;
+    margin: $spacer auto;
+}
+
+.alignleft,
+.alignright {
+    height: auto;
+    margin-bottom: $spacer;
+}
+
+@include media-breakpoint-up(md) {
+    .alignleft {
+        float: left;
+        margin-right: $spacer;
+    }
+
+    .alignright {
+        float: right;
+        margin-left: $spacer;
+    }
+}
+
+
+// WP applies this classes to gallery captions, so style it a little
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+
+    img[class*="wp-image-"] {
+        @include center-block;
+        margin-bottom: 0;
+    }
+
+    .wp-caption-text {
+        margin: 0;
+        padding: rem-calc(8) 0;
+        color: $gray-800;
+        font-size: rem-calc(11);
+        text-align: left;
+    }
+}
+
+
+// Default WP gallery styles
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    text-align: center;
+
+    .gallery-columns-2 & {
+        max-width: 50%;
+    }
+
+    .gallery-columns-3 & {
+        max-width: 33.33%;
+    }
+
+    .gallery-columns-4 & {
+        max-width: 25%;
+    }
+
+    .gallery-columns-5 & {
+        max-width: 20%;
+    }
+
+    .gallery-columns-6 & {
+        max-width: 16.66%;
+    }
+
+    .gallery-columns-7 & {
+        max-width: 14.28%;
+    }
+
+    .gallery-columns-8 & {
+        max-width: 12.5%;
+    }
+
+    .gallery-columns-9 & {
+        max-width: 11.11%;
+    }
+}
+
+.gallery-caption {
+    display: block;
+}
+
+
+// TinyMCE
+// WYSIWYG styles
+.mce-content-body {
+    margin: 10px;
+
+    a {
+        color: $blue;
+        text-decoration: underline;
+    }
+}

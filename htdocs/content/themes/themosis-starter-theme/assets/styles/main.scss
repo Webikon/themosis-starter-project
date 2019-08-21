@@ -1,0 +1,100 @@
+// ----
+//
+// Table of Contents
+//
+// Import all our SASS partials here.
+// Don't add styles to this file, keep everything separated into the partials - it helps to keep the code in reusable chunks.
+//
+// ----
+
+
+//--
+// Import basics as variables, mixins and CSS framework.
+//--
+@import "base/functions"; // always first
+@import "base/variables";
+@import "base/bootstrap";
+@import "base/mixins";
+
+
+//--
+// Import npm dependencies.
+//
+// Prefix your imports with `~` to grab from node_modules/
+// @see https://github.com/webpack-contrib/sass-loader#imports
+//--
+
+// @import "~slick-carousel/slick/slick";
+
+
+//--
+// Import vendor (third party code).
+// We do this first because we may override some of these and they are not dependent on our code
+//--
+
+// @import "vendor/*";
+
+
+//--
+// Import our styles for global elements.
+//--
+
+@import "global/accessibility";
+@import "global/animations";
+@import "global/buttons";
+@import "global/fonts";
+@import "global/forms";
+@import "global/icons";
+@import "global/lists";
+@import "global/media";
+@import "global/tables";
+@import "global/typography";
+@import "global/widgets";
+@import "global/wp-classes";
+
+//--
+// Import actual styles for our components.
+// See the files for descriptions of their contents.
+//--
+
+@import "components/hamburger";
+
+
+//--
+// Import section styles.
+// Styles for specific sections, those sections are built from components.
+//--
+
+@import "sections/header";
+
+
+//--
+// Import templates styles.
+// Styles for specific page templates like archive, single, contact template, etc.
+//--
+
+@import "templates/base";
+
+
+//--
+// Import custom helper classes.
+// These classes are loaded after all other partials because of cascade so they have always bigger basic specificity.
+// See the files for descriptions of their contents.
+//--
+@import "global/helpers";
+
+
+//--
+// Import misc styles, like overwriting vendor styles, etc.
+// See the files for descriptions of their contents.
+//--
+
+// @import "misc/slick-custom";
+
+//--
+// Import shameful styles.
+// Uh oh, what's this? A technique developed by the ingenious Harry Roberts (http://j.mp/shamecss), the _shame.scss contains all of the styles you know you shouldn't be doing.
+// This might include !importants, hacky overrides, or verbose styles you know can be done differenty. The idea is that you have all of them in one place to address later.
+//--
+
+@import "shame";

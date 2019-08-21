@@ -1,0 +1,70 @@
+// Menu hamburger which animates and transforms to close icon
+// Markup should be `<button><span class="hamburger"></span></button>`
+.hamburger {
+    position: relative;
+    top: -9px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 2px;
+    background-color: $body-color;
+    transition: all 200ms;
+
+    button:hover & {
+        background-color: $link-hover-color;
+    }
+
+    .is-expanded:hover &,
+    .is-expanded:focus &,
+    .is-expanded & {
+        background-color: transparent;
+    }
+
+    &:before,
+    &:after {
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 2px;
+        content: '';
+        background-color: $body-color;
+        transition: all 300ms;
+
+        .is-expanded & {
+            left: 0;
+            width: 24px;
+            background-color: $gray-800;
+        }
+
+        button:hover & {
+            background-color: $link-hover-color;
+        }
+
+        button:focus &,
+        .is-expanded:focus & {
+            background-color: $link-hover-color;
+        }
+    }
+
+    &:before {
+        top: 6px;
+        margin-left: auto;
+
+        .is-expanded & {
+            top: 7px;
+            width: 24px;
+            transform: rotate(45deg);
+        }
+    }
+
+    &:after {
+        top: 10px;
+        width: 12px;
+
+        .is-expanded & {
+            top: 5px;
+            width: 24px;
+            transform: rotate(-45deg);
+        }
+    }
+}
