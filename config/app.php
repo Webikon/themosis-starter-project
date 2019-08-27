@@ -160,7 +160,11 @@ return [
         App\Hooks\Application::class,
         App\Hooks\Compat::class,
         App\Hooks\Mail::class,
-        App\Hooks\Widgets::class
+        App\Hooks\Widgets::class,
+
+        // Custom hooks
+        App\Hooks\Book::class,
+        App\Hooks\BookAuthor::class,
     ],
 
     /*
