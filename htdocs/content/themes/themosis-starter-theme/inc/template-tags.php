@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Theme;
+
 if (! function_exists('posted_on')) {
     /**
      * Prints HTML with meta information for the current post-date/time.
