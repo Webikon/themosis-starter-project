@@ -25,7 +25,7 @@
   <!-- Increase line length limit -->
   <rule ref="Generic.Files.LineLength">
     <properties>
-      <property name="lineLimit" value="300"/>
+      <property name="lineLimit" value="500"/>
     </properties>
   </rule>
 </ruleset>

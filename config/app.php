@@ -173,6 +173,9 @@ return [
         App\Hooks\Metaboxes\MetaboxesCustomizations::class,
         App\Hooks\Metaboxes\PostCPT::class,
         App\Hooks\Metaboxes\ThemeSettingsAP::class,
+
+        // Gutenberg Blocks
+        App\Hooks\Metaboxes\Blocks\DemoBlock::class,
     ],
 
     /*
