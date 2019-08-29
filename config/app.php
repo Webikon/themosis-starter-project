@@ -163,6 +163,9 @@ return [
         App\Hooks\Widgets::class,
 
         // Custom hooks
+        App\Hooks\GlobalData::class,
+
+        // CPTs & Taxonomies
         App\Hooks\Book::class,
         App\Hooks\BookAuthor::class,
 
