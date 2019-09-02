@@ -27,11 +27,9 @@ class BlogController extends Controller
     public function single(\WP_Post $post)
     {
         return view('blog.single-post', [
-            // 'latest_articles' => Post::where('post_status', 'publish')
-            //     ->whereNotIn('ID', [$post->ID])
-            //     ->orderby('post_date', 'asc')
-            //     ->take(2)
-            //     ->get()
+            'page_data' => [
+
+            ],
         ]);
     }
 
@@ -43,7 +41,7 @@ class BlogController extends Controller
     public function search(Request $request)
     {
         return view('blog.search', [
-            'searched_terms' => $request->get('s')
+            'searched_terms' => $request->get('s'),
         ]);
     }
 }

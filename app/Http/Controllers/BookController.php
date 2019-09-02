@@ -27,11 +27,9 @@ class BookController extends Controller
     public function single(\WP_Post $book)
     {
         return view('books.single', [
-            // 'books' => Book::where('post_status', 'publish')
-            //     ->whereNotIn('ID', [$book->ID])
-            //     ->inRandomOrder()
-            //     ->take(3)
-            //     ->get()
+            'page_data' => [
+
+            ],
         ]);
     }
 }
