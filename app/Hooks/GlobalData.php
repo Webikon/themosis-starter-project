@@ -6,12 +6,20 @@ use Themosis\Hook\Hookable;
 
 class GlobalData extends Hookable
 {
+    // We need to use 'wp' so WC functions and all queries are already loaded
+    public $hook = 'wp';
+
+
     /**
      * Add global data shared across all views.
      * You can use it as $global_data variable.
      */
     public function register()
     {
+        if (is_admin()) {
+            return;
+        }
+
         \View::share([
             'global_data' => [
                 'site_name' => get_bloginfo('name'),
