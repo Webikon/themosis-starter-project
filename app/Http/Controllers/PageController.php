@@ -81,7 +81,7 @@ class PageController extends Controller
             'posts_per_page' => 3,
         ];
 
-        $query = new WP_Query($args);
+        $query = new \WP_Query($args);
 
         return $query;
     }
