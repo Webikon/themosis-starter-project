@@ -22,6 +22,7 @@ node_modules/
 
 ### WordPress
 /htdocs/cms/
+/htdocs/content/languages/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
 /htdocs/wp-config-ddev.php
