@@ -159,7 +159,7 @@ return [
     'hooks' => [
         App\Hooks\Application::class,
         App\Hooks\Compat::class,
-        App\Hooks\Mail::class,
+        // App\Hooks\Mail::class, // Disable, we are using plugin for SMTP
         App\Hooks\Widgets::class,
 
         // Custom hooks

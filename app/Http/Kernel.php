@@ -50,7 +50,11 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
+        /**
+         * Disable CSRF, because this functionality is causing issues with Woocommerce.
+         * https://github.com/themosis/themosis/issues/301
+         */
+        // 'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
