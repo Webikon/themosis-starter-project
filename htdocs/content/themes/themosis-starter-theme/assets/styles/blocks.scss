@@ -1,0 +1,16 @@
+// These styles would be loaded in WP Admin area and used in Gutenberg blocks.
+// Include only partials, which are really necessary for blocks!
+
+//--
+// Import basics as variables, mixins and CSS framework.
+//--
+@import "base/functions"; // always first
+@import "base/variables";
+
+
+//--
+// Import actual styles for our components.
+// See the files for descriptions of their contents.
+//--
+
+// @import "components/hero";

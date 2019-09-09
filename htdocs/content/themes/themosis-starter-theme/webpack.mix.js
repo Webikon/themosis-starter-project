@@ -32,6 +32,7 @@ mix.js('assets/scripts/main.js', 'js')
     .sourceMaps()
     .sass('assets/styles/main.scss', 'css/main.css')
     .sourceMaps()
+    .sass('assets/styles/blocks.scss', 'css/blocks.css')
     .options({
         processCssUrls: false, // don't convert images in CSS to base64 urls!
     });

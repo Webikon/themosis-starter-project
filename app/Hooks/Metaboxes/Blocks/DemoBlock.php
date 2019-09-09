@@ -30,7 +30,7 @@ class DemoBlock extends Hookable
                     'align' => ['wide', 'full'],
                 ],
                 'render_callback' => [$this, 'blockCallback'], // We need to use callback to pass proper data and parse Blade
-                'enqueue_style'   => get_stylesheet_directory_uri() . '/dist/css/main.css', // CSS file for the block. We have to load whole main.css.
+                'enqueue_style'   => get_stylesheet_directory_uri() . '/dist/css/blocks.css', // CSS file for the block.
 
                 // Now register the block fields.
                 'fields' => [
