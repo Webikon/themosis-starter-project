@@ -25,6 +25,7 @@ if (user_config.devUrl) {
 
 // Copy all images, preserve directory structure
 mix.copyDirectory('assets/images', 'dist/images');
+mix.copyDirectory('assets/fonts', 'dist/fonts');
 
 // Process JS and CSS, also create sourcemaps
 mix.js('assets/scripts/main.js', 'js')
@@ -34,6 +35,16 @@ mix.js('assets/scripts/main.js', 'js')
     .options({
         processCssUrls: false, // don't convert images in CSS to base64 urls!
     });
+
+// Load jquery globally
+mix.autoload({'jquery': [
+    '$',
+    'window.jQuery',
+    'jQuery',
+    'window.$',
+    'jquery',
+    'window.jquery'
+]});
 
 // Version assets for production
 if (mix.inProduction()) {
