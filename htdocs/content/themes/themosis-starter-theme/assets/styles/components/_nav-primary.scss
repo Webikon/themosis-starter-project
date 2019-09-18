@@ -1,0 +1,27 @@
+.nav-primary {
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.nav-primary__item {
+    margin-bottom: rem-calc(7);
+
+    @include media-breakpoint-up(lg) {
+        margin: 0 rem-calc(10);
+    }
+
+    @include media-breakpoint-up(xl) {
+        margin: 0 rem-calc(20);
+    }
+}
+
+.nav-primary__link {
+    display: block;
+    color: $primary;
+
+    &:hover,
+    &:focus {
+    }
+}
