@@ -2,6 +2,8 @@
 /**
  * Default page template.
  *
+ * $page_data
+ *
  * @author: Webikon
  */
 @endphp
@@ -10,6 +12,6 @@
 
 @section('content')
     @while(have_posts()) @php the_post() @endphp
-        @include('_components.content-page')
+        @include('_sections.page-article')
     @endwhile
 @endsection

@@ -18,7 +18,9 @@
     @endif
 
     @while (have_posts()) @php the_post() @endphp
-        @include('_components.teaser-post')
+        @include('_components.teaser-post', [
+            'data' => App\Theme\get_post_teaser_data(),
+        ])
     @endwhile
 
     {!! get_the_posts_navigation() !!}

@@ -2,6 +2,8 @@
 /**
  * Single post template.
  *
+ * $page_data
+ *
  * @author: Webikon
  */
 @endphp
@@ -10,6 +12,6 @@
 
 @section('content')
     @while(have_posts()) @php the_post() @endphp
-        @include('_components.content-single')
+        @include('_sections.post-article')
     @endwhile
 @endsection

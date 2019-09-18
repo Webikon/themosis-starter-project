@@ -2,6 +2,8 @@
 /**
  * Front page/homepage template.
  *
+ * $page_data
+ *
  * @author: Webikon
  */
 @endphp
@@ -18,8 +20,8 @@
     @endif
 
     @while (have_posts()) @php the_post() @endphp
-        @include('_components.teaser-post')
+        @include('_components.hero', [
+            'data' => $page_data['hero_data'],
+        ])
     @endwhile
-
-    {!! get_the_posts_navigation() !!}
 @endsection

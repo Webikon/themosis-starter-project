@@ -173,6 +173,7 @@ return [
         App\Hooks\AdminPages::class,
         App\Hooks\Metaboxes\BookCPT::class,
         App\Hooks\Metaboxes\ContactTMP::class,
+        App\Hooks\Metaboxes\FrontPage::class,
         App\Hooks\Metaboxes\MetaboxesCustomizations::class,
         App\Hooks\Metaboxes\PostCPT::class,
         App\Hooks\Metaboxes\ThemeSettingsAP::class,

@@ -26,10 +26,10 @@ class BlogController extends Controller
      */
     public function single(\WP_Post $post)
     {
-        return view('blog.single-post', [
-            'page_data' => [
+        $page_data = \App\Theme\get_single_post_data($post->ID);
 
-            ],
+        return view('blog.single-post', [
+            'page_data' => $page_data,
         ]);
     }
 

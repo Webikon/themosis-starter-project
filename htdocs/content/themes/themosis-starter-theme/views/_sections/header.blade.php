@@ -9,15 +9,13 @@
 <header class="header">
     <div class="container">
         <div class="site-logo">
-            <a class="site-logo__link" href="{{ home_url('/') }}">
-                {{ get_bloginfo('name', 'display') }}
+            <a class="site-logo__link" href="{{ $global_data['home_url'] }}">
+                <img src="{{ $global_data['site_logo_url'] }}" alt="Logo">
             </a>
         </div>
 
-        <nav class="nav-primary">
-            @if (has_nav_menu('primary_navigation'))
-                {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-            @endif
-        </nav>
+        @include('_components.nav-primary', [
+            'menu_items' => $global_data['primary_menu_items']
+        ])
     </div>
 </header>

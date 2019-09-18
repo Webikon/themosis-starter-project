@@ -20,15 +20,23 @@ class PageController extends Controller
     {
         return view('pages.front-page', [
             'page_data' => [
+                'title' => get_the_title($post->ID),
+                'content' => apply_filters('the_content', $post->post_content),
+
                 // Hero section
-                // 'hero_title' => get_post_meta(get_the_ID(), 'hero_title', true),
+                'hero_data' => [
+                    'title' => get_post_meta(get_the_ID(), 'hero_title', true),
+                    'text' => get_post_meta(get_the_ID(), 'hero_text', true),
+                ],
 
                 // Benefits section
-                // 'benefits_title' => get_post_meta(get_the_ID(), 'benefits_title', true),
-                // 'benefits_desc' => get_post_meta(get_the_ID(), 'benefits_desc', true),
-                // 'benefits_items' => get_post_meta(get_the_ID(), 'benefits_items', true),
+                'benefits_data' => [
+                    // 'title' => get_post_meta(get_the_ID(), 'benefits_title', true),
+                    // 'desc' => get_post_meta(get_the_ID(), 'benefits_desc', true),
+                    // 'items' => get_post_meta(get_the_ID(), 'benefits_items', true),
+                ],
 
-                'newest_books_query' => self::getNewestBooksQuery(), // Use helper method when getting more complex data
+                // 'newest_books_query' => self::getNewestBooksQuery(), // Use helper method when getting more complex data
             ]
         ]);
     }
@@ -38,9 +46,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\Factory|\Illuminate\View\View
      */
-    public function page()
+    public function page(\WP_Post $post)
     {
-        return view('pages.page');
+        return view('pages.page', [
+            'page_data' => [
+                'title' => get_the_title($post->ID),
+                'content' => apply_filters('the_content', $post->post_content),
+            ],
+        ]);
     }
 
 
@@ -49,11 +62,17 @@ class PageController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\Factory|\Illuminate\View\View
      */
-    public function contact()
+    public function contact(\WP_Post $post)
     {
         return view('pages.template-contact', [
             'page_data' => [
+                'title' => get_the_title($post->ID),
+                'content' => apply_filters('the_content', $post->post_content),
 
+                'hero_data' => [
+                    'title' => 'Custom hero title',
+                    'text' => 'Custom hero text',
+                ],
             ],
         ]);
     }
@@ -79,6 +98,7 @@ class PageController extends Controller
         $args = [
             'post_type' => 'book',
             'posts_per_page' => 3,
+            'fields' => 'ids',
         ];
 
         $query = new \WP_Query($args);
