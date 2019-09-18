@@ -22,6 +22,9 @@
     <severity>0</severity>
   </rule>
 
+  <!-- Sniff also generic PHP syntax so we can catch those with GrumPHP and avoid fatal erros. -->
+  <rule ref="Generic.PHP.Syntax"/>
+
   <!-- Increase line length limit -->
   <rule ref="Generic.Files.LineLength">
     <properties>
