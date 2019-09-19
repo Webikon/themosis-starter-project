@@ -3,9 +3,9 @@
  * Demo block partial used in Gutenberg.
  *
  * Required passed variables:
- *  $title
- *  $img_url
- *  $content
+ *  string $title
+ *  string $img_url
+ *  string $content
  *
  * @author: Webikon
  */

@@ -1,9 +1,9 @@
 @php
 /**
- * Partial for page header displayed on almost every page.
+ * Basic hero.
  *
- * $data['title']
- * $data['text']
+ * string $data['title']
+ * string $data['text']
  *
  * @author: Webikon
  */
@@ -14,7 +14,7 @@
         {!! $data['title'] !!}
     </h2>
 
-    @isset ($data['title'])
+    @isset ($data['text'])
         <div class="hero__text">
             {!! $data['text'] !!}
         </div>

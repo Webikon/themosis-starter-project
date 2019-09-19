@@ -170,13 +170,13 @@ return [
         App\Hooks\BookAuthor::class,
 
         // Metaboxes
-        App\Hooks\AdminPages::class,
-        App\Hooks\Metaboxes\BookCPT::class,
-        App\Hooks\Metaboxes\ContactTMP::class,
-        App\Hooks\Metaboxes\FrontPage::class,
+        App\Hooks\Metaboxes\AdminPages\AdminPagesRegistration::class,
+        App\Hooks\Metaboxes\AdminPages\ThemeSettingsAP::class,
+        App\Hooks\Metaboxes\CustomPostTypes\BookCPT::class,
+        App\Hooks\Metaboxes\CustomPostTypes\PostCPT::class,
+        App\Hooks\Metaboxes\Templates\ContactTMP::class,
+        App\Hooks\Metaboxes\Templates\FrontPage::class,
         App\Hooks\Metaboxes\MetaboxesCustomizations::class,
-        App\Hooks\Metaboxes\PostCPT::class,
-        App\Hooks\Metaboxes\ThemeSettingsAP::class,
 
         // Gutenberg Blocks
         App\Hooks\Metaboxes\Blocks\DemoBlock::class,

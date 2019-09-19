@@ -43,48 +43,60 @@ Key should look like this `base64:Bq7CN4nOW0+TTwbx59jPnuHILi47nymagcQtg2WiEZk=`
 For more info go to [https://framework.themosis.com/docs/2.0/structure/](https://framework.themosis.com/docs/2.0/structure/).  
 Below, there are short explanations of the most important folders and our customizations.
 
-### app\ 
+### app/ 
 Stores all our classes in order to extend or customize our application.
 
-### app\Hooks\
+### app/Hooks/
 [https://framework.themosis.com/docs/2.0/hooks/](https://framework.themosis.com/docs/2.0/hooks/)  
 This is where we extend WP functionality.  
 E.g. register CPTs, Taxonomies, Admin Pages, Widgets, pass Global data, etc.  
 Name new CPT & Taxonomy file in singular, e.g. Book.php, Product.php, Project.php.  
 Don't forget to add register new class in `config/app.php`
 
-### app\Hooks\Metaboxes\
+### app/Hooks/Metaboxes/
 This is where all custom fields registration take place.  
-Add suffix based on where we are adding those custom fields.  
+There should be different subfolders. Also add suffix based on where we are adding those custom fields.   
 E.g. CPT (Custom Post Type), TAX (Taxonomy), TMP (Custom Template), AP (Admin Page).  
 
-We also register Gutenberg blocks in `app\Hooks\Metaboxes\Blocks`.  
+We also register Gutenberg blocks in `app/Hooks/Metaboxes/Blocks`.  
 Add suffix Block to each file for better file recognition.
 
 Also don't forget to register new classes in `config/app.php`.
 
-### app\Http\Controllers\
+### app/Http/Controllers/
 [https://framework.themosis.com/docs/2.0/controllers/](https://framework.themosis.com/docs/2.0/controllers/)  
 This is where we add all our controllers.  
-We are not necessarily following WP Template Hierarchy and we can add more "high level" controllers, e.g. like BlogController, which can be controlling Blog page (Archive), Single Post and Search.
+We are not necessarily following WP Template Hierarchy and we can add more "high level" controllers and group related views together e.g. like BlogController, which can be controlling Blog page (Archive), Single Post and Search.  
+Data shouldn't be manipulated here. If we need to manipulate data, we should use or create helper in theme's `inc/helpers` folder.  
+This will keep our controllers clean and move bussiness logic outside - this also means, that we would be more ready to transition into using Models or "Services" (similar to helpers) classes.
 
-### config\app.php
+### config/app.php
 As mentioned before, we need to register all custom Hookable classes here.
 
-### routes\web.php
+### routes/web.php
 This is where all routes are defined.
 
-### htdocs\content\themes\theme_slug\config\
+### htdocs/content/themes/theme_slug/config/
 Register new image sizes, menus, sidebars, custom templates, etc. here.
 
-### htdocs\content\themes\theme_slug\inc\
+### htdocs/content/themes/theme_slug/inc/
 This is main folder for extending and adding more functionality to WP.  
-Each functionality block should be in separate file for better readability.  
-E.g. `favorites.php`, `pagination.php`, `wp-query-hooks.php`, ...
+Each functionality block should be in separate file or subfolder for better readability.  
 
-**Important**: All these files should be namespaced `App\Theme`. 
+Simple rules to add functionality:
+1. **Single file** - If there is simple functionality, which can be added to one file - put it into `inc/` root.  
+E.g. `favorites.php`, `pagination.php`, `wp-query-hooks.php`, ...  
 
-We also have subfolder named `woocommerce` - each file in this folder should be prefixed with `wc-` for better file recognition.
+2. **Subfolder** - If there is more complex functionality, which requires more than one file, or we can group two functionalities into one group - put it into `inc/subfolder`.    
+E.g. `wc-dpd-export/wc-dpd-countries.php`, `wc-dpd-export/wc-dpd-export.php`, ...  
+If using WC, create subfolder named `woocommerce` and each file in this folder should be prefixed with `wc-` for better file recognition.
+
+3. **Separate plugin** - If there is really complex functionality, which we can reuse on other projects and/or possibly sell - put this functionality in custom WP plugin.  
+E.g. `woocommerce-wholesale`, `woocommerce-product-bundles`, etc.
+
+If you are not sure, what type particular functionality is and it is not specified in technical specification, consult with your teammate.
+
+**Important**: All these files should be namespaced `App/Theme`. 
 
 
 License

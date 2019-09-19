@@ -3,7 +3,7 @@
  * Metaboxes for Book CPT.
  */
 
-namespace App\Hooks\Metaboxes;
+namespace App\Hooks\Metaboxes\CustomPostTypes;
 
 use Themosis\Hook\Hookable;
 

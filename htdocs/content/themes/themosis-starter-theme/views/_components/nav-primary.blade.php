@@ -2,7 +2,7 @@
 /**
  * Primary menu.
  *
- * $menu_items
+ * array $menu_items
  *
  * @author: Webikon
  */

@@ -31,7 +31,7 @@ class GlobalData extends Hookable
                 'home_url' => get_home_url(),
                 'image_path' => get_stylesheet_directory_uri().'/assets/images/', // used in Jigsaw
 
-                'primary_menu_items' => \App\Theme\get_menu_array('main-menu'),
+                'primary_menu_items' => \App\Theme\get_menu_items('main-menu'),
 
                 // Social
                 'social' => [

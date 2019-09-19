@@ -2,11 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Book;
-use App\Post;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
-
 class PageController extends Controller
 {
     /**

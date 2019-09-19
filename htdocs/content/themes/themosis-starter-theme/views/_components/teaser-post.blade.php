@@ -2,9 +2,9 @@
 /**
  * Post teaser used in loops.
  *
- * $data['title']
- * $data['link']
- * $data['excerpt']
+ * string $data['title']
+ * string $data['link']
+ * string $data['excerpt']
  *
  * @author: Webikon
  */

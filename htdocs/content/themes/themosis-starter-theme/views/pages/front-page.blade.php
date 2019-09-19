@@ -2,7 +2,7 @@
 /**
  * Front page/homepage template.
  *
- * $page_data
+ * array $page_data
  *
  * @author: Webikon
  */

@@ -2,8 +2,8 @@
 /**
  * Default single post content partial.
  *
- * $page_data['title']
- * $page_data['content']
+ * string $page_data['title']
+ * string $page_data['content']
  *
  * @author: Webikon
  */

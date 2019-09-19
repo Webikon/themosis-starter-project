@@ -2,7 +2,7 @@
 /**
  * Partial for page header displayed on almost every page.
  *
- * $page_data['title']
+ * string $page_data['title']
  *
  * @author: Webikon
  */

@@ -3,11 +3,11 @@
  * Additional Admin pages.
  */
 
-namespace App\Hooks;
+namespace App\Hooks\Metaboxes\AdminPages;
 
 use Themosis\Hook\Hookable;
 
-class AdminPages extends Hookable
+class AdminPagesRegistration extends Hookable
 {
     /**
      * Register new pages.

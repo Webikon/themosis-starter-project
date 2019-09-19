@@ -10,7 +10,7 @@ namespace App\Theme;
  * @param  string $menu_location
  * @return array
  */
-function get_menu_array($menu_location = '')
+function get_menu_items($menu_location = '')
 {
     $menu_array = array();
 

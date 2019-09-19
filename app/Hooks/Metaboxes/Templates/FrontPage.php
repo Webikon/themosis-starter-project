@@ -3,7 +3,7 @@
  * Metaboxes for Front page.
  */
 
-namespace App\Hooks\Metaboxes;
+namespace App\Hooks\Metaboxes\Templates;
 
 use Themosis\Hook\Hookable;
 

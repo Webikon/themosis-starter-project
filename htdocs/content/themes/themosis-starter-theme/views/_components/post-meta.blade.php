@@ -2,10 +2,10 @@
 /**
  * Post meta partial.
  *
- * $data['time']
- * $data['date']
- * $data['author_name']
- * $data['author_url']
+ * string $data['time']
+ * string $data['date']
+ * string $data['author_name']
+ * string $data['author_url']
  *
  * @author: Webikon
  */
