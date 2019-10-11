@@ -6,7 +6,7 @@
 
 /** Default WP templates **/
 // Front/Home page.
-Route::any('/', 'PageController@front');
+Route::any('/', 'HomepageController@front');
 
 
 // Blog page.
