@@ -12,9 +12,9 @@ This starter project includes:
 - Theme with predefined files structure, Bootstrap, Laravel Mix, etc.
 - Linters config files - PHPCS, ESLint, SASS-Lint, editor-config
 - GrumPHP
-- TODO: Basic Controllers examples
-- TODO: Basic routing examples
-- TODO: Basic Models examples
+- Basic Controllers examples
+- Basic routing examples
+- Basic Models examples
 
 ## How to Start
 1. Download repo: `git clone https://gitlab.com/webikon/internal/themosis-starter-project my-project-name` where `my-project-name` is directory name where repo would be downloaded.
