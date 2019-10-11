@@ -1,0 +1,19 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    tasks: { 
+        phpcs: {
+            standard: [],
+            ignore_patterns: [
+                ./resources/*, 
+                ./database/*, 
+                ./bootstrap/*,
+                ./storage/*,
+                ./vendor/*,
+                ./htdocs/cms/*,
+                ./htdocs/content/plugins/*,
+                ./htdocs/content/uploads/*,
+                '*.blade.php',
+            ]
+        }
+     }

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="Webikon">
+  <description>Webikon Coding Standards</description>
+
+  <exclude-pattern>htdocs/cms/*</exclude-pattern>
+  <exclude-pattern>htdocs/content/plugins/*</exclude-pattern>
+  <exclude-pattern>htdocs/content/uploads/*</exclude-pattern>
+  <exclude-pattern>vendor/*</exclude-pattern>
+  <exclude-pattern>storage/*</exclude-pattern>
+
+  <!-- Show colors in console -->
+  <arg value="-colors"/>
+
+  <!-- Show sniff codes in all reports -->
+  <arg value="s"/>
+
+  <!-- Use PSR-2 as a base -->
+  <rule ref="PSR2"/>
+
+  <!-- Disable side effect, because it is causing warning with anonymous WP hooks declaration -->
+  <rule ref="PSR1.Files.SideEffects">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Increase line length limit -->
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="300"/>
+    </properties>
+  </rule>
+</ruleset>
