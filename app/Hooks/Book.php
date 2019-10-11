@@ -4,8 +4,6 @@ namespace App\Hooks;
 
 use Themosis\Hook\Hookable;
 use Themosis\PostType\Contracts\PostTypeInterface;
-use Themosis\Support\Facades\Field;
-use Themosis\Support\Facades\Metabox;
 use Themosis\Support\Facades\PostType;
 
 class Book extends Hookable

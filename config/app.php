@@ -165,6 +165,14 @@ return [
         // Custom hooks
         App\Hooks\Book::class,
         App\Hooks\BookAuthor::class,
+
+        // Metaboxes
+        App\Hooks\AdminPages::class,
+        App\Hooks\Metaboxes\BookCPT::class,
+        App\Hooks\Metaboxes\ContactTMP::class,
+        App\Hooks\Metaboxes\MetaboxesCustomizations::class,
+        App\Hooks\Metaboxes\PostCPT::class,
+        App\Hooks\Metaboxes\ThemeSettingsAP::class,
     ],
 
     /*
