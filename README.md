@@ -1,20 +1,25 @@
-# Welcome to Themosis Starter Project
+# Welcome to Webikon's Themosis Starter Project
 
-This project is based on [Themosis](https://www.themosis.com) framework and customized by Webikon.
+This project is based on [Themosis](https://www.themosis.com) framework and customized by [Webikon](https://webikon.sk).
 It is used to jump start working on the project without the need to setup all necessary things over and over again.
 
-Steps below are only quick guide how to start working with project, for additional Themosis documentation please look [here](https://framework.themosis.com/docs/2.0/).
+Steps below are only quick guide how to start working with the project, for additional Themosis documentation please look [here](https://framework.themosis.com/docs/2.0/).
 
 This starter project includes:
+
 - Themosis core
 - Predefined set of plugins
-- BladeSVG
 - Theme with predefined files structure, Bootstrap, Laravel Mix, etc.
-- Linters config files - PHPCS, ESLint, SASS-Lint, editor-config
+- Linters config files - PHPCS, ESLint, SASS-Lint, .editor-config
 - GrumPHP
+- BladeSVG Provider
 - Basic Controllers examples
 - Basic routing examples
 - Basic Models examples
+- Basic Admin Pages, Metaboxes and Gutenberg Blocks registration examples (Metabox.io)
+- Basic CPTs and Taxonomies registration examples
+- Global data passing example
+- ...
 
 ## How to Start
 1. Download repo: `git clone https://gitlab.com/webikon/internal/themosis-starter-project my-project-name` where `my-project-name` is directory name where repo would be downloaded.
@@ -33,6 +38,53 @@ This starter project includes:
 `No application encryption key has been specified.` - To fix this, you need to generate APP_KEY with `php console key:generate --ansi`  command and make sure your `.env` file is updated. 
 Key should look like this `base64:Bq7CN4nOW0+TTwbx59jPnuHILi47nymagcQtg2WiEZk=`
 
+
+## Project structure
+For more info go to [https://framework.themosis.com/docs/2.0/structure/](https://framework.themosis.com/docs/2.0/structure/).  
+Below, there are short explanations of the most important folders and our customizations.
+
+### app\ 
+Stores all our classes in order to extend or customize our application.
+
+### app\Hooks\
+[https://framework.themosis.com/docs/2.0/hooks/](https://framework.themosis.com/docs/2.0/hooks/)  
+This is where we extend WP functionality.  
+E.g. register CPTs, Taxonomies, Admin Pages, Widgets, pass Global data, etc.  
+Name new CPT & Taxonomy file in singular, e.g. Book.php, Product.php, Project.php.  
+Don't forget to add register new class in `config/app.php`
+
+### app\Hooks\Metaboxes\
+This is where all custom fields registration take place.  
+Add suffix based on where we are adding those custom fields.  
+E.g. CPT (Custom Post Type), TAX (Taxonomy), TMP (Custom Template), AP (Admin Page).  
+
+We also register Gutenberg blocks in `app\Hooks\Metaboxes\Blocks`.  
+Add suffix Block to each file for better file recognition.
+
+Also don't forget to register new classes in `config/app.php`.
+
+### app\Http\Controllers\
+[https://framework.themosis.com/docs/2.0/controllers/](https://framework.themosis.com/docs/2.0/controllers/)  
+This is where we add all our controllers.  
+We are not necessarily following WP Template Hierarchy and we can add more "high level" controllers, e.g. like BlogController, which can be controlling Blog page (Archive), Single Post and Search.
+
+### config\app.php
+As mentioned before, we need to register all custom Hookable classes here.
+
+### routes\web.php
+This is where all routes are defined.
+
+### htdocs\content\themes\theme_slug\config\
+Register new image sizes, menus, sidebars, custom templates, etc. here.
+
+### htdocs\content\themes\theme_slug\inc\
+This is main folder for extending and adding more functionality to WP.  
+Each functionality block should be in separate file for better readability.  
+E.g. `favorites.php`, `pagination.php`, `wp-query-hooks.php`, ...
+
+**Important**: All these files should be namespaced `App\Theme`. 
+
+We also have subfolder named `woocommerce` - each file in this folder should be prefixed with `wc-` for better file recognition.
 
 
 License
