@@ -26,7 +26,7 @@ This starter project includes:
 1. Configure global variables like WP Salts, APP_NAME, APP_TD, WP_DEFAULT_THEME, etc.
 2. Replace all strings `'themosis-starter-project'` (including apostrophes) with project slug.
 3. Replace all strings `Themosis Starter Project` with project name.
-4. Rename theme and replace all strings `'themosis-starter-theme'` with theme slug.
+4. Rename theme and replace all strings `'themosis-starter-theme'` and `themosis-starter-theme` with theme slug.
 
 ### Common Issues
 `No application encryption key has been specified.` - To fix this, you need to generate APP_KEY with `php console key:generate --ansi`  command and make sure your `.env` file is updated. 

@@ -141,6 +141,9 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // Custom provider
+        BladeSvg\BladeSvgServiceProvider::class,
     ],
 
     /*
