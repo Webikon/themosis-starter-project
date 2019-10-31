@@ -22,16 +22,6 @@ add_filter('the_content', function ($pee) {
 }, 50);
 
 /**
- * Wrap images with figure tag.
- * Courtesy of Interconnectit http://interconnectit.com/2175/how-to-remove-p-tags-from-images-in-wordpress/
- */
-add_filter('the_content', function ($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure class="media js-gallery">$1</figure>', $pee);
-
-    return $pee;
-}, 50);
-
-/**
  * Customized the output of caption, you can remove the filter to restore back to the WP default output.
  * Courtesy of DevPress. http://devpress.com/blog/captions-in-wordpress/
  */

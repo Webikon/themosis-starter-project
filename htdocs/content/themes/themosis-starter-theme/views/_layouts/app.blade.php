@@ -19,11 +19,7 @@
         @include('_sections.header')
 
         <div class="container" role="document">
-            <div class="row">
-                <main class="col-12">
-                    @yield('content')
-                </main>
-            </div>
+            @yield('content')
         </div>
 
         @php do_action('get_footer') @endphp
